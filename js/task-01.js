@@ -1,8 +1,10 @@
 // ? Count the number of categories
 
 const categoriesListRef = document.querySelector('#categories');
-
-console.log(`Number of categories: ${categoriesListRef.childElementCount}`);
+const showCategoriesCount = categoriesList => {
+    console.log(`Number of categories: ${categoriesList.childElementCount}`);
+}
+showCategoriesCount(categoriesListRef)
 
 
 
