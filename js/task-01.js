@@ -18,4 +18,4 @@ const showCategories = categoriesItemsRef.forEach((item) => {
     console.log(`Elements: ${item.lastElementChild.childElementCount}`);
 })
 
-
+showCategories()
