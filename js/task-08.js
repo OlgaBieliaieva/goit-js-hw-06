@@ -6,16 +6,21 @@ refs.form.addEventListener('submit', onFormSubmit)
 
 function onFormSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formDataObj = {};
+    const formData = event.currentTarget.elements;
+    console.log(formData.name);
+    const formDataObj = {
+        email: "",
+        password: ""
+    };
     
-    formData.forEach((value, name) => {
+    formData.forEach((element) => {
         
-        if (value.length === 0) {
-            value = prompt(`Fill in the field "${name}", please`);
+        if (element.email.value.length === 0 || element.password.value.length === 0) {
+            return alert(`Fill in the all fields, please`);
         }
         
-        formDataObj[name] = value
+        formDataObj.email = element.email.value;
+        formDataObj.password = element.password.value;
     })
     console.log(formDataObj);
     refs.form.reset();
