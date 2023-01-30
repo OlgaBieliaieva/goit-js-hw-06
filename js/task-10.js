@@ -9,25 +9,29 @@ const refs = {
   createBtn: document.querySelector('#controls [data-create]'),
   destroyBtn: document.querySelector('#controls [data-destroy]'),
   divList: document.querySelector('#boxes')
-}
+};
 
 refs.createBtn.addEventListener('click', createBoxes);
+refs.destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
   amount = refs.input.value;
-  
+  let height = 20;
+  let width = 20;
   const boxArray = Array.from(Array(Number(amount)));
-
-  // const element = createElements('div');
-  // element.style.width = '30px'
-  // element.style.height = '30px'
-
-
-
-  console.log(boxArray);
-  
+  const boxItems = boxArray.map(item => {
+    width += 10;
+    height += 10;
+    item = document.createElement('div');
+    item.style.backgroundColor = getRandomHexColor();
+    item.style.width = `${width}px`;
+    item.style.height = `${height}px`;
+    return item;
+  })  
+  refs.divList.append(...boxItems);
+  refs.input.value = ''; //?
 }
-console.log(refs.input);
-console.log(refs.createBtn);
-console.log(refs.destroyBtn);
 
+function destroyBoxes() {
+  refs.divList.innerHTML = '';
+}
