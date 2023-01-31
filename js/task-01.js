@@ -1,17 +1,13 @@
+const categoriesItemsRef = document.querySelectorAll('.item')
+
+
 // ? Count the number of categories
 
-const categoriesListRef = document.querySelector('#categories');
-const showCategoriesCount = categoriesList => {
-    console.log(`Number of categories: ${categoriesList.childElementCount}`);
-}
-showCategoriesCount(categoriesListRef)
+console.log(`Number of categories: ${categoriesItemsRef.length}`);
 
 
 
 // ?  Count the number of elements in each category
-
-
-const categoriesItemsRef = document.querySelectorAll('.item')
 
 const showCategories = categoriesItemsRef.forEach((item) => {
     console.log(`Category: ${item.firstElementChild.textContent}`);
