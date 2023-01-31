@@ -6,5 +6,5 @@ const refs = {
 refs.inputField.addEventListener('input', onInputChange)
 
 function onInputChange(event) {
-    event.currentTarget.value === "" ? refs.outputField.textContent = "Anonymous" : refs.outputField.textContent = event.currentTarget.value
+    event.currentTarget.value.trim() === "" ? refs.outputField.textContent = "Anonymous" : refs.outputField.textContent = event.currentTarget.value
 }
