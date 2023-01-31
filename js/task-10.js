@@ -18,9 +18,10 @@ function createBoxes(amount) {
   amount = refs.input.value;
   let height = 20;
   let width = 20;
+  
   // const boxArray = Array.from(Array(Number(amount))); //? var#2
   const boxArray = new Array(Number(amount)).fill(1);
-  console.log(boxArray);
+  
   const boxItems = boxArray.map(item => {
     width += 10;
     height += 10;
