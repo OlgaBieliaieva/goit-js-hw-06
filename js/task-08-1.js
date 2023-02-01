@@ -12,7 +12,7 @@ function onFormSubmit(event) {
     formData.forEach((value, name) => {
         
         if (value.length === 0) {
-            value = prompt(`Fill in the field "${name}", please`);
+            value = alert(`Fill in all fields, please`);
         }
         
         formDataObj[name] = value
